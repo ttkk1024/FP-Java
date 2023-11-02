@@ -285,5 +285,10 @@ public class Main {
         int sum_reduce = someNumbers.parallelStream().reduce(0, (a, b) -> a + b);
         // no reduce vs reduce
         // 小数据reduce无优势，大数据reduce可并发
+
+        long count = menu.stream().count();
+        long count_map_reduce = menu.stream()
+                .map(d -> 1)
+                .reduce(0,(a,b) -> a + b);
     }
 }
